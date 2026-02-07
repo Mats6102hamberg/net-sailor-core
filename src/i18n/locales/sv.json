@@ -44,7 +44,33 @@
   "omrade": {
     "title": "Mitt Område",
     "description": "Håll koll på vad som händer i ditt närområde",
-    "comingSoon": "Kommer snart",
-    "comingSoonText": "Vi bygger något fantastiskt. Trygg Nära – lokal trygghet och gemenskap."
+    "chooseArea": "Välj ditt område",
+    "searchPlaceholder": "Sök område...",
+    "noAreas": "Inga områden hittades",
+    "events": "Händelser",
+    "noEvents": "Inga händelser just nu – lugnt i området!",
+    "report": "Rapportera händelse",
+    "reportTitle": "Vad har hänt?",
+    "reportDescription": "Beskriv händelsen",
+    "reportName": "Ditt namn (valfritt)",
+    "reportSubmit": "Skicka rapport",
+    "reportSuccess": "Tack! Din rapport har skickats.",
+    "severity": "Allvarlighetsgrad",
+    "severityLow": "Låg",
+    "severityMedium": "Medel",
+    "severityHigh": "Hög",
+    "type": {
+      "WARNING": "Varning",
+      "INFO": "Information",
+      "TIP": "Tips",
+      "NEIGHBOUR_WATCH": "Grannsamverkan"
+    },
+    "status": {
+      "ACTIVE": "Aktiv",
+      "RESOLVED": "Löst",
+      "ARCHIVED": "Arkiverad"
+    },
+    "timeAgo": "sedan",
+    "allAreas": "Alla områden"
   }
 }

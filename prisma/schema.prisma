@@ -18,6 +18,19 @@ enum KidStatus {
   REPAIR
 }
 
+enum EventType {
+  WARNING
+  INFO
+  TIP
+  NEIGHBOUR_WATCH
+}
+
+enum EventStatus {
+  ACTIVE
+  RESOLVED
+  ARCHIVED
+}
+
 model Guardian {
   id        String   @id @default(cuid())
   clerkId   String?  @unique
@@ -73,16 +86,20 @@ model Area {
 }
 
 model AreaEvent {
-  id          String   @id @default(cuid())
+  id          String      @id @default(cuid())
   areaId      String
-  area        Area     @relation(fields: [areaId], references: [id])
-  type        String
+  area        Area        @relation(fields: [areaId], references: [id])
+  type        EventType   @default(INFO)
+  status      EventStatus @default(ACTIVE)
   title       String
-  description String?  @db.Text
-  severity    Int      @default(1)
-  createdAt   DateTime @default(now())
+  description String?     @db.Text
+  severity    Int         @default(1)
+  reporterName String?
+  createdAt   DateTime    @default(now())
+  resolvedAt  DateTime?
 
   @@index([areaId])
+  @@index([createdAt])
 }
 
 model BorisLog {

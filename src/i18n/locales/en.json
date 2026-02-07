@@ -44,7 +44,33 @@
   "omrade": {
     "title": "My Neighbourhood",
     "description": "Stay updated on what's happening in your area",
-    "comingSoon": "Coming soon",
-    "comingSoonText": "We're building something amazing. Local safety and community."
+    "chooseArea": "Choose your area",
+    "searchPlaceholder": "Search area...",
+    "noAreas": "No areas found",
+    "events": "Events",
+    "noEvents": "No events right now – all quiet in the area!",
+    "report": "Report event",
+    "reportTitle": "What happened?",
+    "reportDescription": "Describe the event",
+    "reportName": "Your name (optional)",
+    "reportSubmit": "Submit report",
+    "reportSuccess": "Thanks! Your report has been submitted.",
+    "severity": "Severity",
+    "severityLow": "Low",
+    "severityMedium": "Medium",
+    "severityHigh": "High",
+    "type": {
+      "WARNING": "Warning",
+      "INFO": "Information",
+      "TIP": "Tip",
+      "NEIGHBOUR_WATCH": "Neighbourhood Watch"
+    },
+    "status": {
+      "ACTIVE": "Active",
+      "RESOLVED": "Resolved",
+      "ARCHIVED": "Archived"
+    },
+    "timeAgo": "ago",
+    "allAreas": "All areas"
   }
 }
