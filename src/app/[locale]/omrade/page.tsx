@@ -20,7 +20,7 @@ export default async function OmradePage({
 
   const areas = await prisma.area.findMany({
     orderBy: { name: "asc" },
-    include: { _count: { select: { events: { where: { status: "ACTIVE" } } } } },
+    include: { _count: { select: { events: { where: { status: "APPROVED" } } } } },
   });
 
   return (

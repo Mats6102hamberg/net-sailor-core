@@ -10,7 +10,7 @@ export async function GET(
       where: { slug: params.slug },
       include: {
         events: {
-          where: { status: "ACTIVE" },
+          where: { status: "APPROVED" },
           orderBy: { createdAt: "desc" },
         },
       },
@@ -59,10 +59,11 @@ export async function POST(
         type: eventType,
         severity: eventSeverity,
         reporterName: reporterName ?? null,
+        status: "PENDING",
       },
     });
 
-    return NextResponse.json(event, { status: 201 });
+    return NextResponse.json({ ok: true, status: "PENDING", eventId: event.id }, { status: 201 });
   } catch (error) {
     console.error("POST /api/areas/[slug]/events error:", error);
     return NextResponse.json({ error: "Failed to create event" }, { status: 500 });

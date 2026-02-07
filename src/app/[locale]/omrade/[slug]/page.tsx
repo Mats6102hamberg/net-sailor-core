@@ -23,7 +23,7 @@ export default async function AreaDashboardPage({
     where: { slug: params.slug },
     include: {
       events: {
-        where: { status: "ACTIVE" },
+        where: { status: "APPROVED" },
         orderBy: { createdAt: "desc" },
       },
     },

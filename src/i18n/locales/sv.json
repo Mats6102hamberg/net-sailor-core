@@ -54,7 +54,7 @@
     "reportDescription": "Beskriv händelsen",
     "reportName": "Ditt namn (valfritt)",
     "reportSubmit": "Skicka rapport",
-    "reportSuccess": "Tack! Din rapport har skickats.",
+    "reportSuccess": "Tack! Din rapport granskas innan den visas.",
     "severity": "Allvarlighetsgrad",
     "severityLow": "Låg",
     "severityMedium": "Medel",
@@ -71,6 +71,20 @@
       "ARCHIVED": "Arkiverad"
     },
     "timeAgo": "sedan",
-    "allAreas": "Alla områden"
+    "allAreas": "Alla områden",
+    "admin": {
+      "title": "Granska rapporter",
+      "description": "Rapporter som väntar på granskning",
+      "noPending": "Inga rapporter att granska.",
+      "approve": "Godkänn",
+      "reject": "Avslå",
+      "approved": "Godkänd",
+      "rejected": "Avslagen",
+      "adminKey": "Admin-nyckel",
+      "adminKeyPlaceholder": "Ange admin-nyckel...",
+      "load": "Hämta rapporter",
+      "unauthorized": "Fel nyckel.",
+      "area": "Område"
+    }
   }
 }

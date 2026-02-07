@@ -26,7 +26,9 @@ enum EventType {
 }
 
 enum EventStatus {
-  ACTIVE
+  PENDING
+  APPROVED
+  REJECTED
   RESOLVED
   ARCHIVED
 }
@@ -90,7 +92,7 @@ model AreaEvent {
   areaId      String
   area        Area        @relation(fields: [areaId], references: [id])
   type        EventType   @default(INFO)
-  status      EventStatus @default(ACTIVE)
+  status      EventStatus @default(PENDING)
   title       String
   description String?     @db.Text
   severity    Int         @default(1)

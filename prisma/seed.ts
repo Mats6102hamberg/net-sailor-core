@@ -41,6 +41,7 @@ async function main() {
       data: {
         areaId: sodermalm.id,
         type: "WARNING",
+        status: "APPROVED",
         title: "Inbrott på Hornsgatan",
         description: "Flera bilar uppbrutna under natten mellan tisdag och onsdag. Polisen utreder.",
         severity: 2,
@@ -51,6 +52,7 @@ async function main() {
       data: {
         areaId: sodermalm.id,
         type: "INFO",
+        status: "APPROVED",
         title: "Vattenavstängning fredag 14-18",
         description: "Planerat underhåll av vattenledningar på Götgatan 45-67.",
         severity: 1,
@@ -60,6 +62,7 @@ async function main() {
       data: {
         areaId: sodermalm.id,
         type: "NEIGHBOUR_WATCH",
+        status: "APPROVED",
         title: "Grannsamverkan möte söndag 10:00",
         description: "Vi träffas i innergården för att planera sommarens aktiviteter.",
         severity: 1,
@@ -70,6 +73,7 @@ async function main() {
       data: {
         areaId: sodermalm.id,
         type: "TIP",
+        status: "APPROVED",
         title: "Lås alltid ytterdörren",
         description: "Påminnelse: stäng och lås alltid porten efter dig, även dagtid.",
         severity: 1,
@@ -82,6 +86,7 @@ async function main() {
     data: {
       areaId: areas[1].id,
       type: "WARNING",
+      status: "APPROVED",
       title: "Misstänkt person vid Fridhemsplan",
       description: "Flera grannar har rapporterat en person som ringer på dörrar och utger sig för att vara hantverkare.",
       severity: 2,

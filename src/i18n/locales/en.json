@@ -54,7 +54,7 @@
     "reportDescription": "Describe the event",
     "reportName": "Your name (optional)",
     "reportSubmit": "Submit report",
-    "reportSuccess": "Thanks! Your report has been submitted.",
+    "reportSuccess": "Thanks! Your report will be reviewed before it appears.",
     "severity": "Severity",
     "severityLow": "Low",
     "severityMedium": "Medium",
@@ -71,6 +71,20 @@
       "ARCHIVED": "Archived"
     },
     "timeAgo": "ago",
-    "allAreas": "All areas"
+    "allAreas": "All areas",
+    "admin": {
+      "title": "Review reports",
+      "description": "Reports awaiting review",
+      "noPending": "No reports to review.",
+      "approve": "Approve",
+      "reject": "Reject",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "adminKey": "Admin key",
+      "adminKeyPlaceholder": "Enter admin key...",
+      "load": "Load reports",
+      "unauthorized": "Wrong key.",
+      "area": "Area"
+    }
   }
 }
