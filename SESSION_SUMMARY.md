@@ -1,7 +1,7 @@
 # Net Sailor Core – Session Summary
 
-**Senaste uppdatering**: 2026-02-07 12:15 UTC+01:00  
-**Status**: Live på Vercel, Trygg Nära MVP + moderation v1, alla checkpoints gröna
+**Senaste uppdatering**: 2026-02-07 14:05 UTC+01:00  
+**Status**: Live på Vercel, Trygg Nära MVP + moderation v1 + landningssida + förebyggande moderation
 
 ---
 
@@ -49,6 +49,15 @@
 - Alla texter via i18n (`tryggNaraLanding.*`)
 - Testa: `/sv/trygg-nara` och `/en/trygg-nara`
 
+### Session 5 – Förebyggande moderation + admin-förbättringar
+- **Regelruta i rapportflödet** (Prio 1): Användaren måste klicka "Jag förstår – gå vidare" innan formuläret visas. Regler: fokus på platser, inga personanklagelser, beskriv konkret, 112 vid akut.
+- **CSV-export i admin** (Prio 2b): Knapp "Exportera som CSV" – laddar ner fil med Område, Typ, Severity, Datum, Titel, Beskrivning, Status.
+- **Tack-sida med förväntan** (Prio 3): Efter inskickad rapport: "Vanligtvis inom 24–48 timmar."
+- **"Om piloten"-ruta** (Prio 4): På landningssidan `/trygg-nara` – professionell text för kommun/akademi.
+- **Dashboard-förbättringar**: Granskad-note, typfärger (amber/blå/grön/lila), Godkänd-badge, "Rapportera i [område]"-knapp.
+- PENDING sorteras redan nyast först i admin API (Prio 2a – redan korrekt).
+- i18n: alla nya nycklar sv + en
+
 ---
 
 ## Env vars (Vercel + lokalt)
@@ -73,23 +82,28 @@ Framtida (ej satta ännu):
 | GitHub | `https://github.com/Mats6102hamberg/net-sailor-core` |
 | Vercel | `https://net-sailor-core-mats-hambergs-projects.vercel.app` |
 | Branch | `main` |
-| Senaste commit | moderation v1 |
+| Senaste commit | `a240238` – Prio 1-4: regelruta, CSV-export, tack-sida, Om piloten |
 | DB | `netsailorcore` @ Neon (ep-small-mouse-agpsoekg) |
 
 ⚠️ **Deployment Protection** är aktivt – stäng av för Production i Vercel Settings → Deployment Protection.
 
 ---
 
-## Checkpoints (2026-02-07 12:15)
+## Checkpoints (2026-02-07 14:05)
 
-- `npm run build` ✅ (20 routes)
+- `npm run build` ✅ (22 routes)
 - `/sv/omrade` visar bara APPROVED ✅
 - POST rapport → skapar PENDING i DB ✅
 - Admin utan nyckel → 401 ✅
-- Admin med nyckel → visar PENDING ✅
+- Admin med nyckel → visar PENDING (nyast först) ✅
 - Godkänn → APPROVED, syns publikt ✅
 - Avslå → REJECTED, syns INTE publikt ✅
 - DB-migrationer ✅ (`init` + `add_event_enums` + `add_event_moderation`)
+- Regelruta visas innan rapportformulär ✅
+- CSV-export i admin ✅
+- Tack-sida med 24–48h förväntan ✅
+- Landningssida `/sv/trygg-nara` + `/en/trygg-nara` ✅
+- "Om piloten"-ruta på landningssidan ✅
 
 ---
 
@@ -118,8 +132,27 @@ curl -X PATCH http://localhost:3000/api/admin/events/<ID> \
 
 ---
 
+## Viktiga länkar
+
+| Vad | URL |
+|-----|-----|
+| **Lokal dev** | `http://localhost:3000` |
+| **Landningssida (sv)** | `http://localhost:3000/sv/trygg-nara` |
+| **Landningssida (en)** | `http://localhost:3000/en/trygg-nara` |
+| **Område (sv)** | `http://localhost:3000/sv/omrade` |
+| **Dashboard Södermalm** | `http://localhost:3000/sv/omrade/sodermalm` |
+| **Rapportera** | `http://localhost:3000/sv/omrade/sodermalm/rapportera` |
+| **Admin** | `http://localhost:3000/sv/omrade/admin` |
+| **GitHub** | `https://github.com/Mats6102hamberg/net-sailor-core` |
+| **Vercel (prod)** | `https://net-sailor-core-mats-hambergs-projects.vercel.app` |
+| **Vercel landningssida** | `https://net-sailor-core-mats-hambergs-projects.vercel.app/sv/trygg-nara` |
+
+---
+
 ## Nästa steg
 
 1. Migrera Captain-logik från gamla Net Sailor
 2. Koppla Boris till riktig AI
 3. Clerk auth (senare, när allt fungerar)
+4. Statistiksektion på landningssidan (när det finns riktiga användare)
+5. Boris som dirigent (arkitekturbeslut: GPT-5.3 vs Claude vs Gemini vs embeddings)
