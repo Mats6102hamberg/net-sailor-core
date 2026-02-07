@@ -100,7 +100,8 @@
       "title": "Trygg Nära",
       "badge": "Pilot",
       "subtitle": "Safety in your neighbourhood – with reviewed events.",
-      "cta": "Open Area"
+      "cta": "Open Area",
+      "ctaSecondary": "How it works"
     },
     "cards": {
       "what": {

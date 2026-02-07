@@ -100,7 +100,8 @@
       "title": "Trygg Nära",
       "badge": "Pilot",
       "subtitle": "Trygghet i ditt kvarter – med granskade händelser.",
-      "cta": "Öppna Område"
+      "cta": "Öppna Område",
+      "ctaSecondary": "Så fungerar det"
     },
     "cards": {
       "what": {

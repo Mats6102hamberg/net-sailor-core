@@ -72,8 +72,7 @@ export default async function TryggNaraLandingPage({
           href={`/${locale}`}
           className="flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors"
         >
-          <span>←</span>
-          <span className="text-sm font-medium">Net Sailor</span>
+          <span className="text-sm font-medium">← Tillbaka</span>
         </Link>
         <div className="flex items-center gap-2">
           <span className="text-xl">🛡️</span>
@@ -103,13 +102,24 @@ export default async function TryggNaraLandingPage({
               {hero.subtitle}
             </p>
           </div>
-          <Link
-            href={`/${locale}/omrade`}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-600 text-white text-base font-semibold rounded-2xl hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-200"
-          >
-            {hero.cta}
-            <span>→</span>
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <Link
+              href={`/${locale}/omrade`}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-600 text-white text-base font-semibold rounded-2xl hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-200"
+            >
+              {hero.cta}
+              <span>→</span>
+            </Link>
+            {hero.ctaSecondary && (
+              <a
+                href="#flow"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-slate-500 hover:text-slate-800 transition-colors"
+              >
+                {hero.ctaSecondary}
+                <span>↓</span>
+              </a>
+            )}
+          </div>
         </div>
       </section>
 
@@ -130,7 +140,7 @@ export default async function TryggNaraLandingPage({
       </section>
 
       {/* Flow */}
-      <section className="px-4 pb-16">
+      <section id="flow" className="px-4 pb-16 scroll-mt-8">
         <div className="max-w-2xl mx-auto text-center space-y-8">
           <h2 className="text-xl font-bold text-slate-800">{flow.title}</h2>
           <div className="flex items-center justify-center gap-2 sm:gap-4">
@@ -191,7 +201,7 @@ export default async function TryggNaraLandingPage({
 
       {/* Footer */}
       <footer className="text-center py-6 text-xs text-slate-400 border-t border-slate-200">
-        Net Sailor Core · Trygg Nära
+        Trygg Nära · Pilot
       </footer>
     </main>
   );
