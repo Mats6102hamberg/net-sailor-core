@@ -90,5 +90,52 @@
       "unauthorized": "Fel nyckel.",
       "area": "Område"
     }
+  },
+  "tryggNaraLanding": {
+    "meta": {
+      "title": "Trygg Nära – Trygghet i ditt kvarter",
+      "description": "Rapportera risker, se granskade händelser och bidra till säkrare platser i ditt närområde."
+    },
+    "hero": {
+      "title": "Trygg Nära",
+      "badge": "Pilot",
+      "subtitle": "Trygghet i ditt kvarter – med granskade händelser.",
+      "cta": "Öppna Område"
+    },
+    "cards": {
+      "what": {
+        "title": "Vad är Trygg Nära?",
+        "body": "Trygg Nära är en del av Net Sailor som fokuserar på fysisk trygghet i ditt närområde. Invånare kan rapportera risker, se godkända händelser och bidra till säkrare platser. Fokus ligger på platser och situationer – inte på att peka ut personer."
+      },
+      "how": {
+        "title": "Så fungerar det",
+        "body": "Du rapporterar en händelse i ditt område. Rapporten granskas innan den blir synlig. Godkända händelser visas för alla i området. Allt sker sakligt och utan krav på inloggning."
+      },
+      "integrity": {
+        "title": "Integritet & ansvar",
+        "body": "Alla rapporter granskas innan de publiceras. Personanklagelser tillåts inte. Syftet är att skapa en gemensam, saklig bild av vad som händer i närområdet – för familjer, grannar och kommun."
+      }
+    },
+    "flow": {
+      "title": "Från rapport till synlig händelse",
+      "step1": "Rapport",
+      "step2": "Granskning",
+      "step3": "Godkänd",
+      "step4": "Synlig"
+    },
+    "faq": {
+      "title": "Vanliga frågor",
+      "q1": "Syns min rapport direkt?",
+      "a1": "Nej. Alla rapporter granskas innan de visas publikt.",
+      "q2": "Kan jag rapportera anonymt?",
+      "a2": "Ja. Inget inlogg krävs i pilotversionen. Du kan ange namn om du vill, men det är valfritt.",
+      "q3": "Vad får man rapportera?",
+      "a3": "Risker, skador, belysning, skolväg, information, tips och grannsamverkan. Inga personanklagelser.",
+      "q4": "Vad händer om något är akut?",
+      "a4": "Ring 112 vid akut fara. Trygg Nära är inte en larmtjänst."
+    },
+    "boris": {
+      "message": "Hej! Jag är Boris 🐙 Jag hjälper dig att hitta rätt: se granskade händelser i ditt område eller rapportera något som kan göra platser tryggare."
+    }
   }
 }

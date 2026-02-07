@@ -41,6 +41,14 @@
 - i18n: admin-nycklar på sv + en
 - Seed uppdaterad: alla demo-events har `status: APPROVED`
 
+### Session 4 – Trygg Nära landningssida
+- Ny sida: `/[locale]/trygg-nara` (sv + en)
+- Sektioner: Hero med Pilot-badge, 3 informationskort, flödesrad (Rapport → Granskning → Godkänd → Synlig), Boris-meddelande, FAQ (4 frågor)
+- CTA-knapp → `/[locale]/omrade`
+- Meta title/description per locale
+- Alla texter via i18n (`tryggNaraLanding.*`)
+- Testa: `/sv/trygg-nara` och `/en/trygg-nara`
+
 ---
 
 ## Env vars (Vercel + lokalt)

@@ -90,5 +90,52 @@
       "unauthorized": "Wrong key.",
       "area": "Area"
     }
+  },
+  "tryggNaraLanding": {
+    "meta": {
+      "title": "Trygg Nära – Safety in your neighbourhood",
+      "description": "Report risks, see reviewed events and help make places safer in your neighbourhood."
+    },
+    "hero": {
+      "title": "Trygg Nära",
+      "badge": "Pilot",
+      "subtitle": "Safety in your neighbourhood – with reviewed events.",
+      "cta": "Open Area"
+    },
+    "cards": {
+      "what": {
+        "title": "What is Trygg Nära?",
+        "body": "Trygg Nära is a part of Net Sailor focused on physical safety in your neighbourhood. Residents can report risks, see approved events and help make places safer. The focus is on places and situations – not on pointing out individuals."
+      },
+      "how": {
+        "title": "How it works",
+        "body": "You report an event in your area. The report is reviewed before it becomes visible. Approved events are shown to everyone in the area. Everything is factual and no login is required."
+      },
+      "integrity": {
+        "title": "Integrity & responsibility",
+        "body": "All reports are reviewed before publication. Personal accusations are not allowed. The purpose is to create a shared, factual picture of what happens in the neighbourhood – for families, neighbours and the municipality."
+      }
+    },
+    "flow": {
+      "title": "From report to visible event",
+      "step1": "Report",
+      "step2": "Review",
+      "step3": "Approved",
+      "step4": "Visible"
+    },
+    "faq": {
+      "title": "FAQ",
+      "q1": "Is my report visible immediately?",
+      "a1": "No. All reports are reviewed before they appear publicly.",
+      "q2": "Can I report anonymously?",
+      "a2": "Yes. No login is required in the pilot version. You can provide your name if you want, but it is optional.",
+      "q3": "What can I report?",
+      "a3": "Risks, damage, lighting, school routes, information, tips and neighbourhood watch. No personal accusations.",
+      "q4": "What if something is urgent?",
+      "a4": "Call 112 in case of immediate danger. Trygg Nära is not an emergency service."
+    },
+    "boris": {
+      "message": "Hi! I'm Boris 🐙 I help you find your way: see reviewed events in your area or report something that can make places safer."
+    }
   }
 }
