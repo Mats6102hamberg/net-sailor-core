@@ -1,0 +1,50 @@
+{
+  "common": {
+    "appName": "Net Sailor",
+    "tagline": "En app. Två världar. En Boris.",
+    "loading": "Laddar...",
+    "back": "Tillbaka",
+    "next": "Nästa",
+    "save": "Spara",
+    "cancel": "Avbryt",
+    "error": "Något gick fel",
+    "language": "Språk"
+  },
+  "home": {
+    "welcome": "Välkommen till Net Sailor",
+    "subtitle": "Trygghet – digitalt och nära",
+    "choosePath": "Vad vill du göra?",
+    "familj": {
+      "title": "Familj",
+      "description": "Digital säkerhet för hela familjen. Lektioner, guider och stöd.",
+      "cta": "Öppna Familj"
+    },
+    "omrade": {
+      "title": "Område",
+      "description": "Lokal trygghet och gemenskap. Händelser, varningar och grannsamverkan.",
+      "cta": "Öppna Område"
+    }
+  },
+  "boris": {
+    "greeting": "Hej! Jag är Boris 🐙",
+    "intro": "Jag hjälper dig att vara trygg – både online och i ditt kvarter.",
+    "tip": "Visste du? Du kan alltid prata med mig om du känner dig osäker."
+  },
+  "familj": {
+    "title": "Familj",
+    "captain": {
+      "title": "Jag är barn/ungdom",
+      "description": "Lär dig om digital säkerhet med Boris som guide"
+    },
+    "guardian": {
+      "title": "Jag är förälder",
+      "description": "Guider, samtalsstöd och inställningshjälp"
+    }
+  },
+  "omrade": {
+    "title": "Mitt Område",
+    "description": "Håll koll på vad som händer i ditt närområde",
+    "comingSoon": "Kommer snart",
+    "comingSoonText": "Vi bygger något fantastiskt. Trygg Nära – lokal trygghet och gemenskap."
+  }
+}

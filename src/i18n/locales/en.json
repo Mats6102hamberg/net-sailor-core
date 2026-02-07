@@ -1,0 +1,50 @@
+{
+  "common": {
+    "appName": "Net Sailor",
+    "tagline": "One app. Two worlds. One Boris.",
+    "loading": "Loading...",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "cancel": "Cancel",
+    "error": "Something went wrong",
+    "language": "Language"
+  },
+  "home": {
+    "welcome": "Welcome to Net Sailor",
+    "subtitle": "Safety – digital and local",
+    "choosePath": "What would you like to do?",
+    "familj": {
+      "title": "Family",
+      "description": "Digital safety for the whole family. Lessons, guides and support.",
+      "cta": "Open Family"
+    },
+    "omrade": {
+      "title": "Neighbourhood",
+      "description": "Local safety and community. Events, alerts and neighbourhood watch.",
+      "cta": "Open Neighbourhood"
+    }
+  },
+  "boris": {
+    "greeting": "Hi! I'm Boris 🐙",
+    "intro": "I help you stay safe – both online and in your neighbourhood.",
+    "tip": "Did you know? You can always talk to me if you feel unsure."
+  },
+  "familj": {
+    "title": "Family",
+    "captain": {
+      "title": "I'm a kid/teen",
+      "description": "Learn about digital safety with Boris as your guide"
+    },
+    "guardian": {
+      "title": "I'm a parent",
+      "description": "Guides, conversation support and settings help"
+    }
+  },
+  "omrade": {
+    "title": "My Neighbourhood",
+    "description": "Stay updated on what's happening in your area",
+    "comingSoon": "Coming soon",
+    "comingSoonText": "We're building something amazing. Local safety and community."
+  }
+}
