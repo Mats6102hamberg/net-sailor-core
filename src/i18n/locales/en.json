@@ -59,6 +59,15 @@
     "reportName": "Your name (optional)",
     "reportSubmit": "Submit report",
     "reportSuccess": "Thanks! Your report will be reviewed before it appears.",
+    "reportSuccessExpectation": "Usually within 24–48 hours.",
+    "reportGuidelines": {
+      "title": "How we report in Trygg Nära",
+      "rule1": "Focus on places and situations, not people",
+      "rule2": "No names or personal accusations",
+      "rule3": "Describe concretely what you see",
+      "rule4": "In case of immediate danger: call 112",
+      "accept": "I understand – continue"
+    },
     "severity": "Severity",
     "severityLow": "Low",
     "severityMedium": "Medium",
@@ -88,7 +97,8 @@
       "adminKeyPlaceholder": "Enter admin key...",
       "load": "Load reports",
       "unauthorized": "Wrong key.",
-      "area": "Area"
+      "area": "Area",
+      "exportCsv": "Export as CSV"
     }
   },
   "tryggNaraLanding": {
@@ -137,6 +147,10 @@
     },
     "boris": {
       "message": "Hi! I'm Boris 🐙 I help you find your way: see reviewed events in your area or report something that can make places safer."
+    },
+    "aboutPilot": {
+      "title": "About the pilot",
+      "body": "Trygg Nära is being tested on a small scale to evaluate how digital tools can strengthen local safety and dialogue between residents and the municipality."
     }
   }
 }

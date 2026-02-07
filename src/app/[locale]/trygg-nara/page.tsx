@@ -12,6 +12,7 @@ type TLanding = {
   flow: TSection;
   faq: TSection;
   boris: TSection;
+  aboutPilot: TSection;
 };
 
 export async function generateMetadata({
@@ -43,6 +44,7 @@ export default async function TryggNaraLandingPage({
   const flow = t.flow ?? {};
   const faq = t.faq ?? {};
   const boris = t.boris ?? {};
+  const aboutPilot = t.aboutPilot ?? {};
 
   const faqItems = [
     { q: faq.q1, a: faq.a1 },
@@ -182,6 +184,19 @@ export default async function TryggNaraLandingPage({
                 <p className="text-sm text-slate-600 leading-relaxed">{item.a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About pilot */}
+      <section className="px-4 pb-16">
+        <div className="max-w-lg mx-auto">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 space-y-2">
+            <div className="flex items-center gap-2">
+              <span className="text-lg">🔬</span>
+              <h3 className="text-sm font-bold text-slate-700">{aboutPilot.title}</h3>
+            </div>
+            <p className="text-sm text-slate-500 leading-relaxed">{aboutPilot.body}</p>
           </div>
         </div>
       </section>

@@ -12,6 +12,7 @@ interface ReportFormProps {
     name: string;
     submit: string;
     success: string;
+    successExpectation: string;
     severity: string;
     severityLow: string;
     severityMedium: string;
@@ -21,6 +22,12 @@ interface ReportFormProps {
     typeTip: string;
     typeNeighbourWatch: string;
     error: string;
+    guidelinesTitle: string;
+    guidelinesRule1: string;
+    guidelinesRule2: string;
+    guidelinesRule3: string;
+    guidelinesRule4: string;
+    guidelinesAccept: string;
   };
 }
 
@@ -38,6 +45,7 @@ export function ReportForm({ areaSlug, locale, labels }: ReportFormProps) {
   const [reporterName, setReporterName] = useState("");
   const [type, setType] = useState<string>("INFO");
   const [severity, setSeverity] = useState(1);
+  const [accepted, setAccepted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -88,6 +96,37 @@ export function ReportForm({ areaSlug, locale, labels }: ReportFormProps) {
       <div className="text-center py-12 space-y-4 animate-fade-in">
         <div className="text-5xl">✅</div>
         <p className="text-lg font-semibold text-emerald-700">{labels.success}</p>
+        <p className="text-sm text-slate-500">{labels.successExpectation}</p>
+      </div>
+    );
+  }
+
+  if (!accepted) {
+    return (
+      <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6 space-y-5">
+        <div className="flex items-center gap-3">
+          <span className="text-2xl">📋</span>
+          <h3 className="text-base font-bold text-amber-900">{labels.guidelinesTitle}</h3>
+        </div>
+        <ul className="space-y-3">
+          {[
+            { icon: "📍", text: labels.guidelinesRule1 },
+            { icon: "🚫", text: labels.guidelinesRule2 },
+            { icon: "✏️", text: labels.guidelinesRule3 },
+            { icon: "🚨", text: labels.guidelinesRule4 },
+          ].map((rule, i) => (
+            <li key={i} className="flex items-start gap-3 text-sm text-amber-800">
+              <span className="flex-shrink-0">{rule.icon}</span>
+              <span>{rule.text}</span>
+            </li>
+          ))}
+        </ul>
+        <button
+          onClick={() => setAccepted(true)}
+          className="w-full py-3 px-4 bg-emerald-600 text-white font-semibold rounded-xl hover:bg-emerald-700 transition-colors"
+        >
+          {labels.guidelinesAccept}
+        </button>
       </div>
     );
   }

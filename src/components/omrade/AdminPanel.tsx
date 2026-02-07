@@ -13,6 +13,7 @@ interface AdminLabels {
   rejected: string;
   unauthorized: string;
   area: string;
+  exportCsv: string;
 }
 
 interface PendingEvent {
@@ -112,6 +113,24 @@ export function AdminPanel({ labels, typeLabels }: AdminPanelProps) {
     }
   }
 
+  function exportCsv() {
+    const header = "Area,Type,Severity,Date,Title,Description,Status";
+    const rows = events.map((e) => {
+      const date = new Date(e.createdAt).toISOString().slice(0, 16).replace("T", " ");
+      const desc = (e.description ?? "").replace(/"/g, '""');
+      const title = e.title.replace(/"/g, '""');
+      return `"${e.area.name}","${typeLabels[e.type] ?? e.type}",${e.severity},"${date}","${title}","${desc}","PENDING"`;
+    });
+    const csv = [header, ...rows].join("\n");
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `trygg-nara-pending-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
   function timeAgo(dateStr: string): string {
     const diff = Date.now() - new Date(dateStr).getTime();
     const minutes = Math.floor(diff / 60000);
@@ -158,6 +177,14 @@ export function AdminPanel({ labels, typeLabels }: AdminPanelProps) {
 
       {events.length > 0 && (
         <div className="space-y-3">
+          <div className="flex justify-end">
+            <button
+              onClick={exportCsv}
+              className="px-4 py-2 text-xs font-semibold text-slate-600 border border-slate-300 rounded-lg hover:bg-slate-100 transition-colors"
+            >
+              {labels.exportCsv}
+            </button>
+          </div>
           {events.map((event) => {
             const sevIndex = Math.min(Math.max(event.severity - 1, 0), 2);
             const status = actionStatus[event.id];

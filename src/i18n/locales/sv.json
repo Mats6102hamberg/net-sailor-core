@@ -59,6 +59,15 @@
     "reportName": "Ditt namn (valfritt)",
     "reportSubmit": "Skicka rapport",
     "reportSuccess": "Tack! Din rapport granskas innan den visas.",
+    "reportSuccessExpectation": "Vanligtvis inom 24–48 timmar.",
+    "reportGuidelines": {
+      "title": "Så rapporterar vi i Trygg Nära",
+      "rule1": "Fokusera på platser och situationer, inte personer",
+      "rule2": "Inga namn eller personanklagelser",
+      "rule3": "Beskriv konkret vad du ser",
+      "rule4": "Vid akut fara: ring 112",
+      "accept": "Jag förstår – gå vidare"
+    },
     "severity": "Allvarlighetsgrad",
     "severityLow": "Låg",
     "severityMedium": "Medel",
@@ -88,7 +97,8 @@
       "adminKeyPlaceholder": "Ange admin-nyckel...",
       "load": "Hämta rapporter",
       "unauthorized": "Fel nyckel.",
-      "area": "Område"
+      "area": "Område",
+      "exportCsv": "Exportera som CSV"
     }
   },
   "tryggNaraLanding": {
@@ -137,6 +147,10 @@
     },
     "boris": {
       "message": "Hej! Jag är Boris 🐙 Jag hjälper dig att hitta rätt: se granskade händelser i ditt område eller rapportera något som kan göra platser tryggare."
+    },
+    "aboutPilot": {
+      "title": "Om piloten",
+      "body": "Trygg Nära testas i liten skala för att utvärdera hur digitala verktyg kan stärka lokal trygghet och dialog mellan invånare och kommun."
     }
   }
 }

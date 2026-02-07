@@ -59,6 +59,7 @@ export default async function ReportPage({
               name: omrade.reportName,
               submit: omrade.reportSubmit,
               success: omrade.reportSuccess,
+              successExpectation: omrade.reportSuccessExpectation,
               severity: omrade.severity,
               severityLow: omrade.severityLow,
               severityMedium: omrade.severityMedium,
@@ -68,6 +69,12 @@ export default async function ReportPage({
               typeTip: omrade.type.TIP,
               typeNeighbourWatch: omrade.type.NEIGHBOUR_WATCH,
               error: common.error,
+              guidelinesTitle: omrade.reportGuidelines.title,
+              guidelinesRule1: omrade.reportGuidelines.rule1,
+              guidelinesRule2: omrade.reportGuidelines.rule2,
+              guidelinesRule3: omrade.reportGuidelines.rule3,
+              guidelinesRule4: omrade.reportGuidelines.rule4,
+              guidelinesAccept: omrade.reportGuidelines.accept,
             }}
           />
         </div>
