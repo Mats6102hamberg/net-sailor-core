@@ -11,6 +11,7 @@ interface EventCardProps {
   typeIcon: string;
   timeAgoLabel: string;
   severityLabels: [string, string, string];
+  statusBadge?: string;
 }
 
 function timeAgo(dateStr: string, label: string): string {
@@ -24,15 +25,17 @@ function timeAgo(dateStr: string, label: string): string {
   return `${days}d ${label}`;
 }
 
-const severityColors = [
-  "bg-blue-100 text-blue-700 border-blue-200",
-  "bg-amber-100 text-amber-700 border-amber-200",
-  "bg-red-100 text-red-700 border-red-200",
-];
+const typeColors: Record<string, string> = {
+  WARNING: "bg-amber-50 text-amber-800 border-amber-200",
+  INFO: "bg-blue-50 text-blue-800 border-blue-200",
+  TIP: "bg-emerald-50 text-emerald-800 border-emerald-200",
+  NEIGHBOUR_WATCH: "bg-violet-50 text-violet-800 border-violet-200",
+};
 
 export function EventCard({
   title,
   description,
+  type,
   severity,
   reporterName,
   createdAt,
@@ -40,12 +43,20 @@ export function EventCard({
   typeIcon,
   timeAgoLabel,
   severityLabels,
+  statusBadge,
 }: EventCardProps) {
   const sevIndex = Math.min(Math.max(severity - 1, 0), 2);
+  const colors = typeColors[type] ?? typeColors.INFO;
 
   return (
-    <div className={`rounded-xl border p-4 space-y-2 ${severityColors[sevIndex]}`}>
-      <div className="flex items-start justify-between">
+    <div className={`relative rounded-xl border p-4 space-y-2 ${colors}`}>
+      {statusBadge && (
+        <span className="absolute top-3 right-3 text-[10px] font-semibold uppercase tracking-wider bg-emerald-600 text-white px-2 py-0.5 rounded-full">
+          {statusBadge}
+        </span>
+      )}
+
+      <div className="flex items-start justify-between pr-16">
         <div className="flex items-center gap-2">
           <span className="text-lg">{typeIcon}</span>
           <span className="text-xs font-semibold uppercase tracking-wide">

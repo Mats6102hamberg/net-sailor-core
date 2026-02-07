@@ -59,16 +59,19 @@ export default async function AreaDashboardPage({
         <div className="max-w-md w-full space-y-6">
           <Boris locale={locale} mood={area.events.length > 0 ? "warn" : "happy"} />
 
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-bold text-slate-800">
-              {t("events")} ({area.events.length})
-            </h2>
-            <Link
-              href={`/${locale}/omrade/${area.slug}/rapportera`}
-              className="px-4 py-2 bg-emerald-600 text-white text-sm font-semibold rounded-xl hover:bg-emerald-700 transition-colors"
-            >
-              + {t("report")}
-            </Link>
+          <div className="space-y-1">
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-bold text-slate-800">
+                {t("events")} ({area.events.length})
+              </h2>
+              <Link
+                href={`/${locale}/omrade/${area.slug}/rapportera`}
+                className="px-4 py-2 bg-emerald-600 text-white text-sm font-semibold rounded-xl hover:bg-emerald-700 transition-colors"
+              >
+                + {t("reportIn")} {area.name}
+              </Link>
+            </div>
+            <p className="text-xs text-slate-400">{t("reviewedNote")}</p>
           </div>
 
           {area.events.length === 0 ? (
@@ -91,6 +94,7 @@ export default async function AreaDashboardPage({
                   typeIcon={typeIcons[event.type] ?? "📢"}
                   timeAgoLabel={t("timeAgo")}
                   severityLabels={[t("severityLow"), t("severityMedium"), t("severityHigh")]}
+                  statusBadge={t("statusApproved")}
                 />
               ))}
             </div>
