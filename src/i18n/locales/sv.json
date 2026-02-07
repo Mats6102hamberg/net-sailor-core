@@ -16,18 +16,19 @@
     "choosePath": "Vad vill du göra?",
     "familj": {
       "title": "Familj",
-      "description": "Digital säkerhet för hela familjen. Lektioner, guider och stöd.",
+      "description": "Digital trygghet för hela familjen. Lektioner, guider och stöd för ett tryggare liv online.",
       "cta": "Öppna Familj"
     },
     "omrade": {
       "title": "Område",
-      "description": "Lokal trygghet och gemenskap. Händelser, varningar och grannsamverkan.",
+      "badge": "Trygg Nära (pilot)",
+      "description": "Trygghet i ditt kvarter. Rapportera risker, se godkända händelser och bidra till säkrare platser.",
       "cta": "Öppna Område"
     }
   },
   "boris": {
     "greeting": "Hej! Jag är Boris 🐙",
-    "intro": "Jag hjälper dig att vara trygg – både online och i ditt kvarter.",
+    "intro": "Jag hjälper dig att vara trygg — online i familjen och ute i ditt kvarter.",
     "tip": "Visste du? Du kan alltid prata med mig om du känner dig osäker."
   },
   "familj": {

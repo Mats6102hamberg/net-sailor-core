@@ -16,18 +16,19 @@
     "choosePath": "What would you like to do?",
     "familj": {
       "title": "Family",
-      "description": "Digital safety for the whole family. Lessons, guides and support.",
+      "description": "Digital safety for the whole family. Lessons, guides and support for a safer life online.",
       "cta": "Open Family"
     },
     "omrade": {
       "title": "Neighbourhood",
-      "description": "Local safety and community. Events, alerts and neighbourhood watch.",
+      "badge": "Trygg Nära (pilot)",
+      "description": "Safety in your neighbourhood. Report risks, see approved events and help make places safer.",
       "cta": "Open Neighbourhood"
     }
   },
   "boris": {
     "greeting": "Hi! I'm Boris 🐙",
-    "intro": "I help you stay safe – both online and in your neighbourhood.",
+    "intro": "I help you stay safe — online with your family and out in your neighbourhood.",
     "tip": "Did you know? You can always talk to me if you feel unsure."
   },
   "familj": {

@@ -74,6 +74,11 @@ export default async function HomePage({
               href={`/${locale}/omrade`}
               className="group relative rounded-2xl bg-gradient-to-br from-emerald-50 to-green-100 border border-emerald-200 p-8 text-left transition-all hover:shadow-xl hover:scale-[1.02] hover:border-emerald-300"
             >
+              {omrade.badge && (
+                <span className="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider bg-emerald-600 text-white px-2 py-0.5 rounded-full">
+                  {omrade.badge}
+                </span>
+              )}
               <div className="text-4xl mb-4">🏘️</div>
               <h2 className="text-xl font-bold text-emerald-900 mb-2">
                 {omrade.title}
