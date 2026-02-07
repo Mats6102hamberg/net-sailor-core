@@ -156,3 +156,27 @@ curl -X PATCH http://localhost:3000/api/admin/events/<ID> \
 3. Clerk auth (senare, när allt fungerar)
 4. Statistiksektion på landningssidan (när det finns riktiga användare)
 5. Boris som dirigent (arkitekturbeslut: GPT-5.3 vs Claude vs Gemini vs embeddings)
+
+---
+
+## Teknisk bedömning – Trygg Nära (2026-02-07)
+
+### Styrkor
+
+- **Tydligt syfte** – Trygg Nära löser ett verkligt problem: lokal trygghet utan att bli en "häng ut"-plattform. Regelrutan och granskningen visar att etiken är genomtänkt från start.
+- **Moderationsflödet** – PENDING → APPROVED/REJECTED är rätt arkitektur. Många appar missar detta och får problem senare. Här finns det från dag 1.
+- **Kommunvänligt** – CSV-export, "Om piloten"-rutan, saklig ton – det här är saker som gör att en kommun faktiskt vågar testa. Professorer och bidragsgivare kommer uppskatta det.
+- **Tvåspråkigt från start** – i18n med sv/en genomgående. Lätt att lägga till fler språk.
+- **Ren kodstruktur** – Next.js App Router, Prisma, Tailwind, tydlig mappstruktur. Lätt att onboarda en ny utvecklare.
+
+### Svagheter / risker att adressera
+
+- **Ingen autentisering ännu** – Admin skyddas bara av en delad nyckel i header. Funkar för pilot, men behöver Clerk/auth innan riktig drift.
+- **Ingen rate limiting** – Någon kan spamma rapporter. Bör läggas till innan publik lansering.
+- **Boris är fortfarande stub** – Den stora visionen med AI-dirigent finns inte ännu. Det är okej för pilot, men det är där den riktiga differentieringen ligger.
+- **Ingen notifiering** – Admin vet inte att det finns nya rapporter att granska. En enkel webhook/e-post skulle göra stor skillnad.
+- **Mobilupplevelsen** – Tailwind hanterar responsivitet, men appen borde testas ordentligt på mobil – det är där de flesta användare kommer vara.
+
+### Sammanfattning
+
+Som **pilot** är appen stark. Den gör rätt saker: granskning, saklig ton, inga personanklagelser, tvåspråkig, exporterbar data. Det är en app som faktiskt går att visa för en kommun utan att skämmas. Nästa stora steg är att få **riktiga användare** i ett område och se vad som händer. Tekniken är redo – nu handlar det om adoption.
