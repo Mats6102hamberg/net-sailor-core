@@ -45,15 +45,17 @@ model Guardian {
 }
 
 model Kid {
-  id                 String    @id @default(cuid())
+  id                 String        @id @default(cuid())
   name               String
   pinHash            String
-  status             KidStatus @default(UNLOCKED)
-  currentLessonOrder Int       @default(1)
+  locale             Locale        @default(sv)
+  status             KidStatus     @default(LOCKED)
+  currentLessonOrder Int           @default(1)
   guardianId         String
-  guardian           Guardian  @relation(fields: [guardianId], references: [id])
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
+  guardian           Guardian      @relation(fields: [guardianId], references: [id], onDelete: Cascade)
+  quizAttempts       QuizAttempt[]
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
 
   @@index([guardianId])
 }
@@ -62,19 +64,70 @@ model Lesson {
   id           String              @id @default(cuid())
   order        Int                 @unique
   translations LessonTranslation[]
+  questions    QuizQuestion[]
   createdAt    DateTime            @default(now())
 }
 
 model LessonTranslation {
-  id        String @id @default(cuid())
+  id        String   @id @default(cuid())
   lessonId  String
-  lesson    Lesson @relation(fields: [lessonId], references: [id])
+  lesson    Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
   locale    Locale
   title     String
-  summary   String
-  contentMd String @db.Text
+  summary   String?
+  contentMd String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@unique([lessonId, locale])
+  @@index([lessonId])
+}
+
+model QuizQuestion {
+  id           String                     @id @default(cuid())
+  lessonId     String
+  lesson       Lesson                     @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  order        Int
+  correctIndex Int
+  translations QuizQuestionTranslation[]
+  attempts     QuizAttempt[]
+  createdAt    DateTime                   @default(now())
+  updatedAt    DateTime                   @updatedAt
+
+  @@unique([lessonId, order])
+  @@index([lessonId])
+}
+
+model QuizQuestionTranslation {
+  id          String       @id @default(cuid())
+  questionId  String
+  question    QuizQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  locale      Locale
+  prompt      String       @db.Text
+  optionA     String
+  optionB     String
+  optionC     String
+  optionD     String
+  explanation String?      @db.Text
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@unique([questionId, locale])
+  @@index([questionId])
+}
+
+model QuizAttempt {
+  id         String       @id @default(cuid())
+  kidId      String
+  kid        Kid          @relation(fields: [kidId], references: [id], onDelete: Cascade)
+  questionId String
+  question   QuizQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  answer     Int
+  correct    Boolean
+  createdAt  DateTime     @default(now())
+
+  @@index([kidId])
+  @@index([questionId])
 }
 
 model Area {

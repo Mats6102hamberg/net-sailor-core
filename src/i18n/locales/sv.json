@@ -101,6 +101,80 @@
       "exportCsv": "Exportera som CSV"
     }
   },
+  "captain": {
+    "login": {
+      "chooseProfile": "Välj din profil",
+      "selectName": "Välj ditt namn...",
+      "enterPin": "Ange din hemliga PIN",
+      "pinHelp": "Ange din 4-siffriga PIN (fråga din förälder om du glömt den)",
+      "loggingIn": "Loggar in...",
+      "setSail": "Sätt segel!",
+      "pinSecure": "Din PIN är säker. Vi delar den aldrig med någon."
+    },
+    "home": {
+      "greeting": "Hej",
+      "startFirst": "Starta första uppdraget",
+      "continueLesson": "Fortsätt nästa lektion",
+      "allDone": "Du är klar!",
+      "startIntro": "Du är redo att börja ditt första uppdrag.",
+      "continueIntro": "Fortsätt där du slutade.",
+      "completedIntro": "Alla uppdrag klara! Bra jobbat!"
+    },
+    "lesson": {
+      "lessonOf": "Lektion {current} av {total}",
+      "takeQuiz": "Gör quiz",
+      "quizHint": "Klara quizet för att låsa upp nästa lektion"
+    },
+    "quiz": {
+      "title": "Testa dina kunskaper!",
+      "instruction": "Svara rätt på alla frågor för att låsa upp nästa lektion.",
+      "submit": "Skicka svar",
+      "submitting": "Skickar...",
+      "passed": "Utmärkt!",
+      "failed": "Inte riktigt",
+      "score": "{score} av {total} rätt",
+      "unlocked": "Du har låst upp lektion {lesson}!",
+      "allDone": "Du har klarat alla lektioner!",
+      "reviewNeeded": "Du behöver 100% rätt. Granska svaren nedan och försök igen.",
+      "reviewTitle": "Granska dina svar",
+      "yourAnswer": "Ditt svar",
+      "correctAnswer": "Rätt svar",
+      "explanation": "Förklaring",
+      "tryAgain": "Försök igen",
+      "continue": "Fortsätt",
+      "questionOf": "Fråga {current} av {total}"
+    },
+    "boris": {
+      "title": "Boris – din digitala kompis",
+      "start": "Hej! Jag är Boris, din digitala kompis. Redo att börja?",
+      "progress": "Bra jobbat hittills! Fortsätt så!",
+      "almostDone": "Wow, nästan klart! Sista uppdraget väntar!",
+      "done": "Fantastiskt! Du har klarat alla uppdrag!",
+      "tip": "Visste du? Tänk alltid efter innan du delar något online.",
+      "quizPass": "Snyggt jobbat!",
+      "quizFail": "Inga problem – alla lär sig!"
+    }
+  },
+  "guardian": {
+    "title": "Guardian Dashboard",
+    "adminKey": "Admin-nyckel",
+    "adminKeyPlaceholder": "Ange admin-nyckel...",
+    "load": "Logga in",
+    "unauthorized": "Fel nyckel.",
+    "noKids": "Inga barn registrerade.",
+    "status": "Status",
+    "progress": "Progress",
+    "reset": "Återställ",
+    "createKid": "Skapa barn",
+    "name": "Namn",
+    "pin": "PIN",
+    "guardian": "Förälder",
+    "save": "Spara",
+    "locked": "Låst",
+    "unlocked": "Upplåst",
+    "repair": "Reparation",
+    "lessonOf": "Lektion {current} av {total}"
+  },
   "tryggNaraLanding": {
     "meta": {
       "title": "Trygg Nära – Trygghet i ditt kvarter",

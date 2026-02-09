@@ -101,6 +101,80 @@
       "exportCsv": "Export as CSV"
     }
   },
+  "captain": {
+    "login": {
+      "chooseProfile": "Choose your profile",
+      "selectName": "Select your name...",
+      "enterPin": "Enter your secret PIN",
+      "pinHelp": "Enter your 4-digit PIN (ask your parent if you forgot it)",
+      "loggingIn": "Logging in...",
+      "setSail": "Set Sail!",
+      "pinSecure": "Your PIN is safe. We never share it with anyone."
+    },
+    "home": {
+      "greeting": "Hi",
+      "startFirst": "Start your first mission",
+      "continueLesson": "Continue next lesson",
+      "allDone": "You're done!",
+      "startIntro": "You're ready to begin your first mission.",
+      "continueIntro": "Continue where you left off.",
+      "completedIntro": "All missions complete! Great job!"
+    },
+    "lesson": {
+      "lessonOf": "Lesson {current} of {total}",
+      "takeQuiz": "Take quiz",
+      "quizHint": "Complete the quiz to unlock the next lesson"
+    },
+    "quiz": {
+      "title": "Test your knowledge!",
+      "instruction": "Answer all questions correctly to unlock the next lesson.",
+      "submit": "Submit answers",
+      "submitting": "Submitting...",
+      "passed": "Excellent!",
+      "failed": "Not quite",
+      "score": "{score} of {total} correct",
+      "unlocked": "You unlocked lesson {lesson}!",
+      "allDone": "You completed all lessons!",
+      "reviewNeeded": "You need 100% to pass. Review the answers below and try again.",
+      "reviewTitle": "Review your answers",
+      "yourAnswer": "Your answer",
+      "correctAnswer": "Correct answer",
+      "explanation": "Explanation",
+      "tryAgain": "Try again",
+      "continue": "Continue",
+      "questionOf": "Question {current} of {total}"
+    },
+    "boris": {
+      "title": "Boris – your digital buddy",
+      "start": "Hi! I'm Boris, your digital buddy. Ready to begin?",
+      "progress": "Great job so far! Keep going!",
+      "almostDone": "Wow, almost done! The last mission awaits!",
+      "done": "Amazing! You completed all missions!",
+      "tip": "Did you know? Always think before you share something online.",
+      "quizPass": "Nice work!",
+      "quizFail": "No worries – everyone learns!"
+    }
+  },
+  "guardian": {
+    "title": "Guardian Dashboard",
+    "adminKey": "Admin key",
+    "adminKeyPlaceholder": "Enter admin key...",
+    "load": "Log in",
+    "unauthorized": "Wrong key.",
+    "noKids": "No kids registered.",
+    "status": "Status",
+    "progress": "Progress",
+    "reset": "Reset",
+    "createKid": "Create kid",
+    "name": "Name",
+    "pin": "PIN",
+    "guardian": "Guardian",
+    "save": "Save",
+    "locked": "Locked",
+    "unlocked": "Unlocked",
+    "repair": "Repair",
+    "lessonOf": "Lesson {current} of {total}"
+  },
   "tryggNaraLanding": {
     "meta": {
       "title": "Trygg Nära – Safety in your neighbourhood",
