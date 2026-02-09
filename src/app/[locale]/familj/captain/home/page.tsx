@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { getCaptainKidIdFromSession } from "@/lib/captain/session";
 import { prisma } from "@/lib/db/prisma";
 import Link from "next/link";
-import { BorisCoach } from "@/components/captain/BorisCoach";
+import { BorisButton } from "@/components/boris/BorisButton";
 import { type Locale } from "@/i18n/config";
 import { getMessages } from "@/i18n/server";
 
@@ -37,7 +37,6 @@ export default async function CaptainHomePage({
   }
 
   const completedLessons = Math.max(0, Math.min(kid.currentLessonOrder - 1, TOTAL_LESSONS));
-  const hasStarted = kid.currentLessonOrder >= 2;
   const allDone = kid.currentLessonOrder >= 6;
 
   const ctaHref = allDone
@@ -52,7 +51,7 @@ export default async function CaptainHomePage({
 
   const introText = allDone
     ? (home.completedIntro ?? (locale === "sv" ? "Alla uppdrag klara! Bra jobbat!" : "All missions complete! Great job!"))
-    : hasStarted
+    : kid.currentLessonOrder >= 2
       ? (home.continueIntro ?? (locale === "sv" ? "Fortsätt där du slutade." : "Continue where you left off."))
       : (home.startIntro ?? (locale === "sv" ? "Du är redo att börja ditt första uppdrag." : "You're ready to start your first mission."));
 
@@ -65,8 +64,8 @@ export default async function CaptainHomePage({
         : (boris.progress ?? (locale === "sv" ? "Bra jobbat hittills! Fortsätt så!" : "Great job so far! Keep going!"));
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white flex items-center">
-      <main className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <main className="flex-1 bg-gradient-to-b from-sky-50 to-white flex items-center">
+      <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
         <div className="text-6xl mb-6">{"\u{1F9ED}"}</div>
         <h1 className="text-3xl font-bold text-slate-900 mb-2">
           {(home.greeting ?? (locale === "sv" ? "Hej" : "Hi"))} {kid.name}!
@@ -96,15 +95,11 @@ export default async function CaptainHomePage({
         </div>
 
         <div className="mb-6 text-left">
-          <BorisCoach
-            completed={completedLessons}
-            total={TOTAL_LESSONS}
-            mood={allDone ? "happy" : "encourage"}
-            labels={{
-              title: boris.title ?? "Boris",
-              message: borisMessage,
-              tip: boris.tip,
-            }}
+          <BorisButton
+            context="family"
+            greeting={boris.title ?? "Boris"}
+            message={borisMessage}
+            tip={boris.tip}
           />
         </div>
 
@@ -125,7 +120,7 @@ export default async function CaptainHomePage({
             &larr; {locale === "sv" ? "Tillbaka till Familj" : "Back to Family"}
           </Link>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

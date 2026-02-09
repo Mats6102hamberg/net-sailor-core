@@ -3,7 +3,7 @@
 import { submitQuiz, type QuizResult } from "@/app/[locale]/familj/captain/quizActions";
 import { useState, useTransition } from "react";
 import Link from "next/link";
-import { BorisCoach } from "@/components/captain/BorisCoach";
+import { BorisButton } from "@/components/boris/BorisButton";
 
 interface QuizQuestion {
   id: string;
@@ -146,14 +146,10 @@ export function QuizForm({ questions, lessonOrder, locale, labels }: QuizFormPro
         </div>
 
         <div className="mt-6">
-          <BorisCoach
-            completed={result.passed ? lessonOrder : lessonOrder - 1}
-            total={5}
-            mood={result.passed ? "happy" : "encourage"}
-            labels={{
-              title: labels.borisTitle,
-              message: result.passed ? labels.borisPass : labels.borisFail,
-            }}
+          <BorisButton
+            context="family"
+            greeting={labels.borisTitle}
+            message={result.passed ? labels.borisPass : labels.borisFail}
           />
         </div>
 

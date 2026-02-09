@@ -10,6 +10,10 @@
     "error": "Något gick fel",
     "language": "Språk"
   },
+  "nav": {
+    "familj": "Familj",
+    "omrade": "Område"
+  },
   "home": {
     "welcome": "Välkommen till Net Sailor",
     "subtitle": "Trygghet – digitalt och nära",

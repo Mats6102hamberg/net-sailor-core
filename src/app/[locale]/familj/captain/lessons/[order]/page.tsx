@@ -3,7 +3,7 @@ import { getCaptainKidIdFromSession } from "@/lib/captain/session";
 import { prisma } from "@/lib/db/prisma";
 import { getLessonByOrder } from "@/lib/db/lessons";
 import { MarkdownRenderer } from "@/components/captain/MarkdownRenderer";
-import { BorisCoach } from "@/components/captain/BorisCoach";
+import { BorisButton } from "@/components/boris/BorisButton";
 import Link from "next/link";
 import { type Locale } from "@/i18n/config";
 import { getMessages } from "@/i18n/server";
@@ -51,7 +51,7 @@ export default async function CaptainLessonPage({
 
   if (!lesson) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
+      <main className="flex-1 bg-gradient-to-b from-sky-50 to-white">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <div className="bg-red-50 border border-red-200 rounded-xl p-6 text-center">
             <p className="text-red-800 mb-4">
@@ -65,38 +65,30 @@ export default async function CaptainLessonPage({
             </Link>
           </div>
         </div>
-      </div>
+      </main>
     );
   }
 
   const totalLessons = 5;
-  const completedLessons = Math.max(0, Math.min(orderNum - 1, totalLessons));
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
-      <header className="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-10">
-        <div className="max-w-4xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link
-              href={`/${locale}/familj/captain/home`}
-              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors"
-            >
-              <span>&larr;</span>
-              <span className="text-sm">{locale === "sv" ? "Tillbaka" : "Back"}</span>
-            </Link>
-            <div className="flex items-center gap-2">
-              <span>{"\u{1F4D6}"}</span>
-              <span className="font-bold text-slate-800">
-                {lessonLabels.lessonOf?.replace("{current}", String(orderNum)).replace("{total}", String(totalLessons)) ??
-                  `${locale === "sv" ? "Lektion" : "Lesson"} ${orderNum}/${totalLessons}`}
-              </span>
-            </div>
-            <div className="w-16" />
-          </div>
+    <main className="flex-1 bg-gradient-to-b from-sky-50 to-white">
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="flex items-center justify-between mb-6">
+          <Link
+            href={`/${locale}/familj/captain/home`}
+            className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors"
+          >
+            <span>&larr;</span>
+            <span className="text-sm">{locale === "sv" ? "Tillbaka" : "Back"}</span>
+          </Link>
+          <span className="font-bold text-slate-800">
+            {lessonLabels.lessonOf?.replace("{current}", String(orderNum)).replace("{total}", String(totalLessons)) ??
+              `${locale === "sv" ? "Lektion" : "Lesson"} ${orderNum}/${totalLessons}`}
+          </span>
+          <div className="w-16" />
         </div>
-      </header>
 
-      <main className="max-w-4xl mx-auto px-4 py-8">
         <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-lg mb-6">
           <h2 className="text-3xl font-bold text-slate-900 mb-3">{lesson.title}</h2>
           {lesson.summary && (
@@ -128,17 +120,14 @@ export default async function CaptainLessonPage({
         </div>
 
         <div className="mt-6">
-          <BorisCoach
-            completed={completedLessons}
-            total={totalLessons}
-            labels={{
-              title: boris.title ?? "Boris",
-              message: boris.progress ?? (locale === "sv" ? "Bra jobbat hittills!" : "Great job so far!"),
-              tip: boris.tip,
-            }}
+          <BorisButton
+            context="family"
+            greeting={boris.title ?? "Boris"}
+            message={boris.progress ?? (locale === "sv" ? "Bra jobbat hittills!" : "Great job so far!")}
+            tip={boris.tip}
           />
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

@@ -10,6 +10,10 @@
     "error": "Something went wrong",
     "language": "Language"
   },
+  "nav": {
+    "familj": "Family",
+    "omrade": "Area"
+  },
   "home": {
     "welcome": "Welcome to Net Sailor",
     "subtitle": "Safety – digital and local",

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { type Locale } from "@/i18n/config";
 import { getMessages } from "@/i18n/server";
+import { BorisButton } from "@/components/boris/BorisButton";
 import type { Metadata } from "next";
 
 type TSection = Record<string, string>;
@@ -45,6 +46,7 @@ export default async function TryggNaraLandingPage({
   const faq = t.faq ?? {};
   const boris = t.boris ?? {};
   const aboutPilot = t.aboutPilot ?? {};
+  const borisGlobal = messages.boris ?? {};
 
   const faqItems = [
     { q: faq.q1, a: faq.a1 },
@@ -54,40 +56,25 @@ export default async function TryggNaraLandingPage({
   ];
 
   const flowSteps = [
-    { icon: "📝", label: flow.step1 },
-    { icon: "🔍", label: flow.step2 },
-    { icon: "✅", label: flow.step3 },
-    { icon: "👁️", label: flow.step4 },
+    { icon: "\u{1F4DD}", label: flow.step1 },
+    { icon: "\u{1F50D}", label: flow.step2 },
+    { icon: "\u2705", label: flow.step3 },
+    { icon: "\u{1F441}\u{FE0F}", label: flow.step4 },
   ];
 
   const cardData: { key: string; icon: string; title: string; body: string }[] = [
-    { key: "what", icon: "🛡️", title: cards.what?.title ?? "", body: cards.what?.body ?? "" },
-    { key: "how", icon: "⚙️", title: cards.how?.title ?? "", body: cards.how?.body ?? "" },
-    { key: "integrity", icon: "🔒", title: cards.integrity?.title ?? "", body: cards.integrity?.body ?? "" },
+    { key: "what", icon: "\u{1F6E1}\u{FE0F}", title: cards.what?.title ?? "", body: cards.what?.body ?? "" },
+    { key: "how", icon: "\u2699\u{FE0F}", title: cards.how?.title ?? "", body: cards.how?.body ?? "" },
+    { key: "integrity", icon: "\u{1F512}", title: cards.integrity?.title ?? "", body: cards.integrity?.body ?? "" },
   ];
 
   return (
-    <main className="min-h-screen flex flex-col bg-gradient-to-b from-white to-slate-50">
-      {/* Header */}
-      <header className="w-full px-4 py-3 flex items-center justify-between bg-white/80 backdrop-blur-sm border-b border-slate-200">
-        <Link
-          href={`/${locale}`}
-          className="flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors"
-        >
-          <span className="text-sm font-medium">← Tillbaka</span>
-        </Link>
-        <div className="flex items-center gap-2">
-          <span className="text-xl">🛡️</span>
-          <span className="font-bold text-slate-800">Trygg Nära</span>
-        </div>
-        <div className="w-20" />
-      </header>
-
+    <main className="flex-1 flex flex-col bg-gradient-to-b from-white to-slate-50">
       {/* Hero */}
       <section className="flex flex-col items-center text-center px-4 pt-16 pb-12">
         <div className="max-w-lg w-full space-y-6">
           <div className="inline-flex items-center gap-2">
-            <span className="text-5xl">🛡️</span>
+            <span className="text-5xl">{"\u{1F6E1}\u{FE0F}"}</span>
           </div>
           <div className="space-y-3">
             <div className="flex items-center justify-center gap-3">
@@ -110,7 +97,7 @@ export default async function TryggNaraLandingPage({
               className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-600 text-white text-base font-semibold rounded-2xl hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-200"
             >
               {hero.cta}
-              <span>→</span>
+              <span>&rarr;</span>
             </Link>
             {hero.ctaSecondary && (
               <a
@@ -118,7 +105,7 @@ export default async function TryggNaraLandingPage({
                 className="inline-flex items-center gap-1 text-sm font-semibold text-slate-500 hover:text-slate-800 transition-colors"
               >
                 {hero.ctaSecondary}
-                <span>↓</span>
+                <span>&darr;</span>
               </a>
             )}
           </div>
@@ -155,7 +142,7 @@ export default async function TryggNaraLandingPage({
                   <span className="text-xs font-semibold text-slate-600">{step.label}</span>
                 </div>
                 {i < flowSteps.length - 1 && (
-                  <span className="text-slate-300 text-xl font-light mb-6">→</span>
+                  <span className="text-slate-300 text-xl font-light mb-6">&rarr;</span>
                 )}
               </div>
             ))}
@@ -166,10 +153,11 @@ export default async function TryggNaraLandingPage({
       {/* Boris */}
       <section className="px-4 pb-16">
         <div className="max-w-lg mx-auto">
-          <div className="rounded-2xl bg-gradient-to-br from-sky-50 to-cyan-50 border border-sky-200 p-6 flex items-start gap-4">
-            <span className="text-4xl flex-shrink-0">🐙</span>
-            <p className="text-sm text-sky-800 leading-relaxed">{boris.message}</p>
-          </div>
+          <BorisButton
+            context="area"
+            greeting={borisGlobal.greeting ?? "Boris"}
+            message={boris.message}
+          />
         </div>
       </section>
 
@@ -193,7 +181,7 @@ export default async function TryggNaraLandingPage({
         <div className="max-w-lg mx-auto">
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 space-y-2">
             <div className="flex items-center gap-2">
-              <span className="text-lg">🔬</span>
+              <span className="text-lg">{"\u{1F52C}"}</span>
               <h3 className="text-sm font-bold text-slate-700">{aboutPilot.title}</h3>
             </div>
             <p className="text-sm text-slate-500 leading-relaxed">{aboutPilot.body}</p>
@@ -209,15 +197,10 @@ export default async function TryggNaraLandingPage({
             className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-600 text-white text-base font-semibold rounded-2xl hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-200"
           >
             {hero.cta}
-            <span>→</span>
+            <span>&rarr;</span>
           </Link>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="text-center py-6 text-xs text-slate-400 border-t border-slate-200">
-        Trygg Nära · Pilot
-      </footer>
     </main>
   );
 }

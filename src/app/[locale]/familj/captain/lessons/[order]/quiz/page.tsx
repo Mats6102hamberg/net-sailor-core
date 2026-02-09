@@ -50,7 +50,7 @@ export default async function CaptainQuizPage({
 
   if (!lesson || lesson.questions.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
+      <main className="flex-1 bg-gradient-to-b from-sky-50 to-white">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 text-center">
             <p className="text-amber-800 mb-4">
@@ -64,7 +64,7 @@ export default async function CaptainQuizPage({
             </Link>
           </div>
         </div>
-      </div>
+      </main>
     );
   }
 
@@ -90,29 +90,22 @@ export default async function CaptainQuizPage({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
-      <header className="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-10">
-        <div className="max-w-4xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link
-              href={`/${locale}/familj/captain/lessons/${orderNum}`}
-              className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors"
-            >
-              <span>&larr;</span>
-              <span className="text-sm">{locale === "sv" ? "Till lektionen" : "Back to lesson"}</span>
-            </Link>
-            <div className="flex items-center gap-2">
-              <span>{"\u{1F4DD}"}</span>
-              <span className="font-bold text-slate-800">
-                Quiz {locale === "sv" ? "lektion" : "lesson"} {orderNum}
-              </span>
-            </div>
-            <div className="w-16" />
-          </div>
+    <main className="flex-1 bg-gradient-to-b from-sky-50 to-white">
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="flex items-center justify-between mb-6">
+          <Link
+            href={`/${locale}/familj/captain/lessons/${orderNum}`}
+            className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors"
+          >
+            <span>&larr;</span>
+            <span className="text-sm">{locale === "sv" ? "Till lektionen" : "Back to lesson"}</span>
+          </Link>
+          <span className="font-bold text-slate-800">
+            Quiz {locale === "sv" ? "lektion" : "lesson"} {orderNum}
+          </span>
+          <div className="w-16" />
         </div>
-      </header>
 
-      <main className="max-w-4xl mx-auto px-4 py-8">
         <div className="bg-sky-50 border border-sky-200 rounded-2xl p-6 mb-8">
           <div className="flex items-start gap-3">
             <span className="text-3xl">{"\u{1F3AF}"}</span>
@@ -143,7 +136,7 @@ export default async function CaptainQuizPage({
           locale={locale}
           labels={labels}
         />
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
